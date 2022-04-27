@@ -1,0 +1,173 @@
+import "../eol/kpi-providers.eol";
+
+pre{
+var javaDate = new Native("java.util.Date");
+
+var smartcity=sc!SmartCity.all.first;
+"Evaluating "+smartcity.println();
+}
+
+rule kpi2evaluated
+transform kpimodel : kpimodel!KpiModel
+to evaluated: evaluated!KpiModel{
+	evaluated.subject = smartcity.city;
+	evaluated.evaldate = javaDate;
+	evaluated.dimensions::=kpimodel.dimensions;
+}
+
+rule Dimension2Dimension
+transform d: kpimodel!Dimension
+to evaluatedd: evaluated!Dimension{
+evaluatedd.name = d.name;
+evaluatedd.dimensions ::= d.dimensions;
+evaluatedd.categories ::= d.categories;
+}
+
+rule Category2Category
+transform cat: kpimodel!Category
+to evaluatedcat: evaluated!Category{
+evaluatedcat.name = cat.name;
+evaluatedcat.kpis ::= cat.kpis;
+evaluatedcat.parameters ::= cat.parameters;
+}
+
+rule Parameter2Parameter
+transform par: kpimodel!Parameter
+to evaluatedpar: evaluated!Parameter{
+	evaluatedpar.name=par.name;
+}
+
+rule Kpi2EvalKpi
+transform kpi: kpimodel!Kpi
+to evaluatedkpi: evaluated!Kpi{
+	evaluatedkpi.name = kpi.name;
+	evaluatedkpi.description = kpi.description;
+	evaluatedkpi.unit = kpi.unit;
+	evaluatedkpi.value ::= kpi.value;
+
+}
+
+@abstract 
+rule  Valuetype
+transform valuetype: kpimodel!ValueType
+to eval: evaluated!ValueType{
+eval.value ::= valuetype.value;
+eval.kpi::=valuetype.kpi;
+}
+
+rule Value
+transform value: kpimodel!Value
+to eval: evaluated!Value{
+eval.valuetype ::= value.valuetype;
+}
+
+
+rule StaticRealValue
+transform single: kpimodel!StaticRealValue
+to eval: evaluated!StaticRealValue{
+	eval.actualizedvalue = single.get(smartcity);
+	eval.targetvalue = single.targetvalue;
+}
+
+rule StaticBoolValue
+transform single: kpimodel!StaticBoolValue
+to eval: evaluated!StaticBoolValue{
+	eval.actualizedvalue = single.get(smartcity);
+	eval.targetvalue = single.targetvalue;
+}
+
+rule StaticIntegerValue
+transform single: kpimodel!StaticIntegerValue
+to eval: evaluated!StaticIntegerValue{
+	eval.actualizedvalue = single.get(smartcity);
+	eval.targetvalue = single.targetvalue;
+}
+
+rule RealValue
+transform single: kpimodel!RealValue
+to eval: evaluated!RealValue{
+eval.actualizedvalue = single.get(smartcity);
+eval.parameter ::= single.parameter;
+eval.targetvalue = single.targetvalue;
+}
+
+rule BoolValue
+transform single: kpimodel!BoolValue
+to eval: evaluated!BoolValue{
+eval.actualizedvalue = single.get(smartcity);
+eval.parameter ::= single.parameter;
+eval.targetvalue = single.targetvalue;
+}
+
+
+rule StringValue
+transform single: kpimodel!StringValue
+to eval: evaluated!StringValue{
+eval.actualizedvalue = single.get(smartcity);
+eval.parameter ::= single.parameter;	
+eval.targetvalue = single.targetvalue;
+}
+
+rule RangedValue
+transform range: kpimodel!RangedValue
+to eval: evaluated!RangedValue{
+eval.ranges::=range.ranges;
+eval.targetvalue = range.targetvalue;
+}
+
+
+rule Range
+transform range: kpimodel!Range
+to eval: evaluated!Range{
+eval.name=range.name;
+eval.min=range.min;
+eval.max=range.max;
+}
+
+rule AggregatedRealValue
+transform aggr: kpimodel!AggregatedRealValue
+to eval: evaluated!AggregatedRealValue{
+eval.oper=aggr.oper;
+eval.values::= aggr.values;
+eval.actualizedvalue =  aggr.get(smartcity);
+eval.targetvalue = aggr.targetvalue;
+}
+
+rule AggregatedBoolValue
+transform aggr: kpimodel!AggregatedBoolValue
+to eval: evaluated!AggregatedBoolValue{
+eval.oper=aggr.oper;
+eval.values::= aggr.values;
+eval.actualizedvalue = aggr.get(smartcity);
+eval.targetvalue = aggr.targetvalue;
+}
+
+rule AggregatedIntegerValue
+transform aggr: kpimodel!AggregatedIntegerValue
+to eval: evaluated!AggregatedIntegerValue{
+eval.oper=aggr.oper;
+eval.values::= aggr.values;
+eval.actualizedvalue = aggr.get(smartcity);
+eval.targetvalue = aggr.targetvalue;
+}
+
+
+rule AggregatedStringValue
+transform aggr: kpimodel!AggregatedStringValue
+to eval: evaluated!AggregatedStringValue{
+eval.oper=aggr.oper;
+eval.values::= aggr.values;
+eval.actualizedvalue = aggr.get(smartcity);
+eval.targetvalue = aggr.targetvalue;
+}
+
+
+rule AggregatedRangedValue
+transform aggr: kpimodel!AggregatedRangedValue
+to eval: evaluated!AggregatedRangedValue{
+eval.ranges::= aggr.ranges;
+eval.values::=aggr.values;
+eval.actualizedvalue = aggr.get(smartcity);
+eval.targetvalue = aggr.targetvalue;
+}
+

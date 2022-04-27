@@ -1,0 +1,24 @@
+?nsuri: http://cs.gssi.it/kpi  
+KpiModel: {
+Dimension: {
+name: dim,
+Category: {
+name: cat,
+parameters:{Parameter: {name: par1}, Parameter: {name: par2}}, 
+kpis: {
+Kpi:{
+name: mykpi,
+description: mykpi desc,
+value: {valuetype: {AggregatedRealValue: 
+{oper: DIV, targetvalue: 10.0,
+values: { AggregatedRealValue: {
+oper: MULT, targetvalue: 12.0,
+values: { RealValue: {parameter: par1}, StaticRealValue: {actualizedvalue: 2.0}}}, RealValue: {parameter: par2}}}}}
+},
+Kpi: {
+name: mysecondkpi,
+description: mykpi desc,
+value: {
+valuetype: { AggregatedRangedValue: {values: {StaticRealValue: {actualizedvalue: 3.0}}, oper: GET, ranges: {Range: {name: MIN, min: 0, max: 5}, Range: {name: MEDIUM, min: 5.1, max: 10}, Range: {name: MAX, min: 10.0, max: 9999}}
+}}
+}}}}}} 
