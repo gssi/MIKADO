@@ -7,21 +7,21 @@
 
 <title>Modeling view </title>
  
-<link rel="stylesheet" type="text/css" href="[%=getFile("css/joint.css")%]" />
+<link rel="stylesheet" type="text/css" href="[%=getFile("css/joint.css")%]" type="text/css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
-<link href="[%=getFile("css/bootstrap.min.css")%]" rel="stylesheet">
+<link href="[%=getFile("css/bootstrap.min.css")%]" rel="stylesheet" type="text/css">
     <!-- Font Awesome -->
-    <link href="[%=getFile("css/font-awesome.min.css")%]" rel="stylesheet">
+    <link href="[%=getFile("css/font-awesome.min.css")%]" rel="stylesheet" type="text/css">
     <!-- NProgress -->
-    <link href="[%=getFile("css/nprogress.css")%]" rel="stylesheet">
+    <link href="[%=getFile("css/nprogress.css")%]" rel="stylesheet" type="text/css">
     <!-- bootstrap-progressbar -->
-    <link href="[%=getFile("css/bootstrap-progressbar-3.3.4.min.css")%]" rel="stylesheet">
+    <link href="[%=getFile("css/bootstrap-progressbar-3.3.4.min.css")%]" rel="stylesheet" type="text/css">
     <!-- bootstrap-daterangepicker -->
-    <link href="[%=getFile("css/daterangepicker.css")%]" rel="stylesheet">
+    <link href="[%=getFile("css/daterangepicker.css")%]" rel="stylesheet" type="text/css">
     
     <!-- Custom Theme Style -->
-    <link href="[%=getFile("css/custom.min.css")%]" rel="stylesheet">
+    <link href="[%=getFile("css/custom.min.css")%]" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -217,7 +217,7 @@
 [%
 operation getFile(file : String) {
 	
-	return //("/it.gssi.cs.mikado.standalone/visualization/picto/"+file);
-	getImage(file);
+	return ("https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/"+file);
+	
 }
 %]

@@ -215,6 +215,6 @@
 </html>
 [%
 operation getFile(file : String) {
-	return ("visualization/picto/"+file);
+	return ("https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/"+file);
 }
 %]

@@ -13,7 +13,7 @@ rule Graphical
 	}
 	
 	template: "kpimodel2picto.egl"
-	 
+	 target :"index.html"
 }
 
 

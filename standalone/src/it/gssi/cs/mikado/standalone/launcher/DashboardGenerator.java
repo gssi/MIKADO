@@ -42,7 +42,7 @@ public class DashboardGenerator {
 			.withScript("visualization/picto/kpimodel2picto.egx")
 			.withModel(new EmfModel(), modelProperties)
 			.withParameter("eglTemplateFileName", "kpimodel2picto.egl")
-			.withOutputRoot(new File("egx-gen").getAbsolutePath())
+			.withOutputRoot(new File("model/gen").getAbsolutePath())
 			.withProfiling()
 			.build();
 		
