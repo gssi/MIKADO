@@ -1,14 +1,15 @@
 ?nsuri: http://cs.gssi.it/smartcity
 ?nsuri: http://cs.gssi.it/smartcity/dataanalytics
-
+ 
 SmartCity: {
 city: L'Aquila,
+geolocation: 4543,
 stakeholders: {
 name: Comune,
 organisation: Comune
 },
 data: {
-name: packname,
+name: packname, 
 data: {
 RealValue: {name: par1, units: inhabitants, value: 10.0},
 RealValue: {name: par2, units: hectars, value: 48.0}

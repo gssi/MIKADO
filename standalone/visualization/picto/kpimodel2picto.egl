@@ -27,7 +27,7 @@
 
 <div class="x_panel fixed_height_320">
                   <div class="x_title">
-                    <h2>Smart city Dashboard -  [%=category.name%]<small> [%=category.getSubject()%]</small></h2>
+                    <h2>Smart city Dashboard <b>[%=kpimodel.subject%]</b> - Evaluation date:[%=kpimodel.evaldate%]</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -43,16 +43,18 @@
                     </ul>
                     <div class="clearfix"></div>
                   </div>
-                  <div class="x_content">
+                  
+<div class="x_content">
+
                   <div class="dashboard-widget-content" >
                         [%
                        var i=0; 
-                        for (kpi in category.kpis.flatten()) {  %]
+                        for (kpi in kpi_model::Kpi) {  %]
                        
-                        
+                      
                   <div class="col-md-4">
                    
-                    <div class="sidebar-widget" style="width:100%">
+                    <div class="sidebar-widget" style="width:100%;height:280px;">
                     <center>
                       
                         <h4><i class="fa fa-area-chart"></i>[%=kpi.name%] ([%=kpi.description%])</a></h4>
@@ -153,9 +155,8 @@
     <script src="[%=getFile("js/moment.min.js")%]"></script>
     <script src="[%=getFile("js/daterangepicker.js")%]"></script>
 
-
-   
-        <script >
+    <!-- Custom Theme Scripts -->
+      <script >
         function init_gauge() {
 
     if (typeof (Gauge) === 'undefined') { return; }
@@ -181,7 +182,7 @@
 
  [%
  var i=0;
- for (kpi in category.kpis.flatten()) {  %]
+ for (kpi in kpi_model::Kpi) {  %]
  [%if(kpi.value.getValue().isTypeOf(Real)){%]
     if ($('#chart_gauge_[%=i%]').length) {
 
@@ -215,6 +216,8 @@
 </html>
 [%
 operation getFile(file : String) {
-	return getImage(file);
+	
+	return //("/it.gssi.cs.mikado.standalone/visualization/picto/"+file);
+	getImage(file);
 }
 %]

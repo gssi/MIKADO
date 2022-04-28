@@ -4,7 +4,7 @@ package smartcity;
 
 class SmartCity {
   attr String city;
-  attr String geocode;
+  attr String geolocation;
   val stakeholder.Stakeholder[*] stakeholders;
   val DataAnalytics.DataPackage[*] data;
   val infrastructure.PublicInfrastructureLayer infrastructurelayer;

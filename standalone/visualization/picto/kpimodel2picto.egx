@@ -17,8 +17,6 @@ rule Graphical
 }
 
 
-
-
 rule Dimensions
 transform dimension: kpi_model::Dimension in: notcontainerDimensions{
 

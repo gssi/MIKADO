@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kpi:KpiModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kpi="http://cs.gssi.it/kpi" xmi:id="_-qYTYMcDEey-SK_On9gwOQ">
+  <dimensions xmi:id="_-qYTYccDEey-SK_On9gwOQ" name="dim">
+    <categories xmi:id="_-qYTYscDEey-SK_On9gwOQ" name="cat">
+      <kpis xmi:id="_-qYTY8cDEey-SK_On9gwOQ" name="mykpi" description="mykpi desc">
+        <value xmi:id="_-qYTZMcDEey-SK_On9gwOQ">
+          <valuetype xsi:type="kpi:AggregatedRealValue" xmi:id="_-qYTZccDEey-SK_On9gwOQ" oper="DIV" targetvalue="10.0">
+            <values xsi:type="kpi:AggregatedRealValue" xmi:id="_-qYTZscDEey-SK_On9gwOQ" oper="MULT" targetvalue="12.0">
+              <values xsi:type="kpi:RealValue" xmi:id="_-qYTZ8cDEey-SK_On9gwOQ" parameter="_-qYTcccDEey-SK_On9gwOQ"/>
+              <values xsi:type="kpi:StaticRealValue" xmi:id="_-qYTaMcDEey-SK_On9gwOQ" actualizedvalue="2.0"/>
+            </values>
+            <values xsi:type="kpi:RealValue" xmi:id="_-qYTaccDEey-SK_On9gwOQ" parameter="_-qYTcscDEey-SK_On9gwOQ"/>
+          </valuetype>
+        </value>
+      </kpis>
+      <kpis xmi:id="_-qYTascDEey-SK_On9gwOQ" name="mysecondkpi" description="mykpi desc">
+        <value xmi:id="_-qYTa8cDEey-SK_On9gwOQ">
+          <valuetype xsi:type="kpi:AggregatedRangedValue" xmi:id="_-qYTbMcDEey-SK_On9gwOQ">
+            <values xsi:type="kpi:StaticRealValue" xmi:id="_-qYTbccDEey-SK_On9gwOQ" actualizedvalue="3.0"/>
+            <ranges xmi:id="_-qYTbscDEey-SK_On9gwOQ" name="MIN" max="5.0"/>
+            <ranges xmi:id="_-qYTb8cDEey-SK_On9gwOQ" name="MEDIUM" min="5.1" max="10.0"/>
+            <ranges xmi:id="_-qYTcMcDEey-SK_On9gwOQ" name="MAX" min="10.0" max="9999.0"/>
+          </valuetype>
+        </value>
+      </kpis>
+      <parameters xmi:id="_-qYTcccDEey-SK_On9gwOQ" name="par1"/>
+      <parameters xmi:id="_-qYTcscDEey-SK_On9gwOQ" name="par2"/>
+    </categories>
+  </dimensions>
+</kpi:KpiModel>

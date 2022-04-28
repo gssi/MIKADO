@@ -6,7 +6,7 @@ Category: {
 name: cat,
 parameters:{Parameter: {name: par1}, Parameter: {name: par2}}, 
 kpis: {
-Kpi:{
+Kpi:{ 
 name: mykpi,
 description: mykpi desc,
 value: {valuetype: {AggregatedRealValue: 

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<smartcity:SmartCity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataAnalytics="http://cs.gssi.it/smartcity/dataanalytics" xmlns:smartcity="http://cs.gssi.it/smartcity" xmi:id="_8GokQMcDEey-SK_On9gwOQ" city="L'Aquila" geolocation="4543">
+  <stakeholders xmi:id="_8GokQccDEey-SK_On9gwOQ" name="Comune" organization="Comune"/>
+  <data xmi:id="_8GokQscDEey-SK_On9gwOQ" name="packname">
+    <data xsi:type="DataAnalytics:RealValue" xmi:id="_8GokQ8cDEey-SK_On9gwOQ" name="par1" unit="inhabitants" value="10.0"/>
+    <data xsi:type="DataAnalytics:RealValue" xmi:id="_8GokRMcDEey-SK_On9gwOQ" name="par2" unit="hectars" value="48.0"/>
+  </data>
+</smartcity:SmartCity>
