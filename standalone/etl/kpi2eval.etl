@@ -4,7 +4,7 @@ pre{
 var javaDate = new Native("java.util.Date");
 
 var smartcity=sc!SmartCity.all.first;
-("Evaluating "+smartcity.city).println();
+("Evaluating "+smartcity.city+"...").println();
 }
 
 rule kpi2evaluated
@@ -169,5 +169,9 @@ eval.ranges::= aggr.ranges;
 eval.values::=aggr.values;
 eval.actualizedvalue = aggr.get(smartcity);
 eval.targetvalue = aggr.targetvalue;
+}
+
+post{
+"Evaluation complete.".println();
 }
 

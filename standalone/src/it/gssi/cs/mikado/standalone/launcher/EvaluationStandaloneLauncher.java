@@ -1,7 +1,10 @@
 package it.gssi.cs.mikado.standalone.launcher;
 
+import java.io.Console;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Scanner;
+
 import org.eclipse.epsilon.common.util.StringProperties;
 import org.eclipse.epsilon.emc.emf.EmfModel;
 import org.eclipse.epsilon.etl.launch.EtlRunConfiguration;
@@ -18,7 +21,8 @@ public class EvaluationStandaloneLauncher {
 	
 	public static void main(String[] args) throws Exception {
 		
-	
+		
+		
 		String kpiMM = "metamodels/kpi.ecore";
 		String scMM = "metamodels/smart_city.ecore";
 
@@ -32,13 +36,20 @@ public class EvaluationStandaloneLauncher {
 		sourceScProperties.setProperty(EmfModel.PROPERTY_NAME, "sc");
 		sourceScProperties.setProperty(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI, scMM);
 		
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter the kpi model relative path");
+		
 		sourceProperties.setProperty(EmfModel.PROPERTY_MODEL_URI,
-			"model/mykpi.flexmi.xmi"
+			sc.nextLine()
 		);
 		sourceProperties.setProperty(EmfModel.PROPERTY_READONLOAD, "true");
 		
+		sc= new Scanner(System.in);
+		System.out.println("Enter the smart city model relative path");
+		
+		
 		sourceScProperties.setProperty(EmfModel.PROPERTY_MODEL_URI,
-				"model/aq.flexmi.xmi"
+				sc.nextLine()
 			);
 		sourceScProperties.setProperty(EmfModel.PROPERTY_READONLOAD, "true");
 		
@@ -51,7 +62,7 @@ public class EvaluationStandaloneLauncher {
 		targetProperties.setProperty(EmfModel.PROPERTY_READONLOAD, "false");
 		targetProperties.setProperty(EmfModel.PROPERTY_STOREONDISPOSAL, "true");
 		EmfModel target = new EmfModel();
-		
+	
 		EtlRunConfiguration runConfig = EtlRunConfiguration.Builder()
 			.withScript("etl/kpi2eval.etl")
 			.withModel(new EmfModel(), sourceProperties)
@@ -62,6 +73,10 @@ public class EvaluationStandaloneLauncher {
 		runConfig.run();
 		runConfig.dispose();
 		target.dispose();
+		
+		DashboardGenerator gen = new DashboardGenerator();
+		gen.genDashboard(target.getModelFile());
+		
 		
 	}
 }

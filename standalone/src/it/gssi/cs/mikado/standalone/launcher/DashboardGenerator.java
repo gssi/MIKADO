@@ -26,7 +26,12 @@ public class DashboardGenerator {
 	
 	public static void main(String[] args) throws Exception {
 		
+		DashboardGenerator gen = new DashboardGenerator();
+		gen.genDashboard("model/evaluated.model");
 		
+	}
+	
+	public void genDashboard(String modelpath) {
 		StringProperties modelProperties = new StringProperties();
 		modelProperties.setProperty(EmfModel.PROPERTY_NAME, "Model");
 		modelProperties.setProperty(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI,

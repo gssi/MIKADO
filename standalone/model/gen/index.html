@@ -1,0 +1,181 @@
+<html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+
+<title>Modeling view </title>
+ 
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/css/joint.css" type="text/css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+<link href="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- NProgress -->
+    <link href="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/css/nprogress.css" rel="stylesheet" type="text/css">
+    <!-- bootstrap-progressbar -->
+    <link href="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" type="text/css">
+    <!-- bootstrap-daterangepicker -->
+    <link href="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/css/daterangepicker.css" rel="stylesheet" type="text/css">
+    
+    <!-- Custom Theme Style -->
+    <link href="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/css/custom.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="x_panel fixed_height_320">
+                  <div class="x_title">
+                    <h2>Smart city Dashboard <b>L'Aquila</b> - Evaluation date:Thu Apr 28 17:00:47 CEST 2022</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Settings 1</a>
+                            <a class="dropdown-item" href="#">Settings 2</a>
+                          </div>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  
+<div class="x_content">
+
+                  <div class="dashboard-widget-content" >
+                       
+                      
+                  <div class="col-md-4">
+                   
+                    <div class="sidebar-widget" style="width:100%;height:280px;">
+                    <center>
+                      
+                        <h4><i class="fa fa-area-chart"></i>mykpi (mykpi desc)</a></h4>
+                       
+                        <canvas width="150" height="80" id="chart_gauge_0" class="" style="width: 180px; height: 100px;"></canvas>
+                        <div class="goal-wrapper">
+                          <span id="gauge-text-0" class="gauge-value gauge-chart pull-left">10.0</span>
+                          <span class="gauge-value pull-left">%</span>
+                          <span id="goal-text" class="goal-value pull-right">100%</span>
+                        </div>
+                        <hr/> <p><i class="fa fa-bar-chart"></i> Actualized value: 0.5166666681567829 </p>  
+                    </center>
+                    </div>
+                
+                </div>
+                 
+                       
+                      
+                  <div class="col-md-4">
+                   
+                    <div class="sidebar-widget" style="width:100%;height:280px;">
+                    <center>
+                      
+                        <h4><i class="fa fa-area-chart"></i>mysecondkpi (mykpi desc)</a></h4>
+                       
+               			
+                        <div class="goal-wrapper">
+						<div class="btn btn-secondary alert-success" style="width:150px">MIN</div>
+						<div class="btn btn-secondary" style="width:150px">MEDIUM</div>
+						<div class="btn btn-secondary" style="width:150px">MAX</div>
+                        </div>
+                        <hr/> <p><i class="fa fa-bar-chart"></i> Actualized value: MIN </p>  
+                    </center>
+                    </div>
+                
+                </div>
+                 
+                  </div></div>
+                </div>
+                <!-- gauge.js -->
+   
+    
+   <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/jquery.min.js"></script>
+    <!-- Bootstrap -->
+   <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/Chart.min.js"></script>
+    <!-- jQuery Sparklines -->
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/jquery.sparkline.min.js"></script>
+    <!-- morris.js -->
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/raphael.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/morris.min.js"></script>
+    <!-- gauge.js -->
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/bootstrap-progressbar.min.js"></script>
+    <!-- Skycons -->
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/skycons.js"></script>
+    <!-- Flot -->
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/jquery.flot.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/jquery.flot.pie.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/jquery.flot.time.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/jquery.flot.stack.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/jquery.flot.orderBars.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/jquery.flot.spline.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/date.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gssi/MIKADO-HTML-css-js/js/daterangepicker.js"></script>
+
+    <!-- Custom Theme Scripts -->
+      <script >
+        function init_gauge() {
+
+    if (typeof (Gauge) === 'undefined') { return; }
+
+   
+
+
+    var chart_gauge_settings = {
+        lines: 12,
+        angle: 0,
+        lineWidth: 0.4,
+        pointer: {
+            length: 0.75,
+            strokeWidth: 0.042,
+            color: '#1D212A'
+        },
+        limitMax: 'false',
+        colorStart: '#1ABC9C',
+        colorStop: '#1ABC9C',
+        strokeColor: '#F0F3F3',
+        generateGradient: true
+    };
+
+    if ($('#chart_gauge_0').length) {
+
+        var chart_gauge_0_elem = document.getElementById('chart_gauge_0');
+        var chart_gauge_0 = new Gauge(chart_gauge_0_elem).setOptions(chart_gauge_settings);
+
+    }
+    
+    if ($('#gauge-text-0').length) {
+
+        chart_gauge_0.maxValue =  100;
+        chart_gauge_0.animationSpeed = 32;
+        chart_gauge_0.set(5.166666681567828);
+        chart_gauge_0.setTextField(document.getElementById("gauge-text-0"));
+
+    }
+     
+    
+    
+   } 
+    init_gauge();
+ </script>
+    
+</body>
+</html>
