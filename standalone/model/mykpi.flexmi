@@ -1,24 +1,20 @@
 ?nsuri: http://cs.gssi.it/kpi  
 KpiModel: {
 Dimension: {
-name: dim,
+name: Environment,
 Category: {
-name: cat,
-parameters:{Parameter: {name: par1}, Parameter: {name: par2}}, 
+name: Public Spaces,
+parameters:{Parameter: {name: citypop}, Parameter: {name: TGA}}, 
 kpis: {
 Kpi:{ 
-name: mykpi,
-description: mykpi desc,
-value: {valuetype: {AggregatedRealValue: 
-{oper: DIV, targetvalue: 10.0,
-values: { AggregatedRealValue: {
-oper: MULT, targetvalue: 12.0,
-values: { RealValue: {parameter: par1}, StaticRealValue: {actualizedvalue: 2.0}}}, RealValue: {parameter: par2}}}}}
-},
-Kpi: {
-name: mysecondkpi,
-description: mykpi desc,
-value: {
-valuetype: { AggregatedRangedValue: {values: {StaticRealValue: {actualizedvalue: 3.0}}, oper: GET, ranges: {Range: {name: MIN, min: 0, max: 5}, Range: {name: MEDIUM, min: 5.1, max: 10}, Range: {name: MAX, min: 10.0, max: 9999}}
-}}
-}}}}}} 
+name: GA,
+description: Green Areas,
+value: {valuetype: {
+AggregatedRealValue: 
+{oper: DIV, 
+targetvalue: 100,
+values: { RealValue: {parameter: TGA}, 
+AggregatedRealValue: {
+oper: MULT,
+values: { RealValue: {parameter: citypop},
+AggregatedRealValue: {oper: DIV, values: {StaticIntegerValue: {actualizedvalue: 1}, StaticIntegerValue: {actualizedvalue: 100000}}}}}}}}}}}}}}

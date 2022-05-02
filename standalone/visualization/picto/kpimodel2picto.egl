@@ -60,7 +60,7 @@
                         <h4><i class="fa fa-area-chart"></i>[%=kpi.name%] ([%=kpi.description%])</a></h4>
                        
                         [%if(kpi.value.getValue().isTypeOf(Real)){%]
-                        <canvas width="150" height="80" id="chart_gauge_[%=i%]" class="" style="width: 180px; height: 100px;"></canvas>
+                        <canvas width="150" height="80" id="chart_gauge_[%=i%]" class="" style="width: 180px; height: 100px;" data-value="[%=kpi.value.getValue()*100/kpi.value.getTargetValue()%]" ></canvas>
                         <div class="goal-wrapper">
                           <span id="gauge-text-[%=i%]" class="gauge-value gauge-chart pull-left">[%=kpi.value.getTargetValue()%]</span>
                           <span class="gauge-value pull-left">%</span>
@@ -157,12 +157,9 @@
 
     <!-- Custom Theme Scripts -->
       <script >
-        function init_gauge() {
+   function init_gauge(gauges) {
 
     if (typeof (Gauge) === 'undefined') { return; }
-
-   
-
 
     var chart_gauge_settings = {
         lines: 12,
@@ -180,36 +177,25 @@
         generateGradient: true
     };
 
- [%
- var i=0;
- for (kpi in kpi_model::Kpi) {  %]
- [%if(kpi.value.getValue().isTypeOf(Real)){%]
-    if ($('#chart_gauge_[%=i%]').length) {
-
-        var chart_gauge_[%=i%]_elem = document.getElementById('chart_gauge_[%=i%]');
-        var chart_gauge_[%=i%] = new Gauge(chart_gauge_[%=i%]_elem).setOptions(chart_gauge_settings);
-
+for (var i = 0; i < gauges.length; ++i) {
+ 
+    var gauge = gauges[i];
+  
+    if (gauge!=null) {
+	
+       
+        var chart_gauge = new Gauge(gauge).setOptions(chart_gauge_settings);
+ 		chart_gauge.maxValue =  100;
+        chart_gauge.animationSpeed = 32;
+		chart_gauge.set(gauge.getAttribute('data-value'));
     }
-    
-    if ($('#gauge-text-[%=i%]').length) {
-
-        chart_gauge_[%=i%].maxValue =  100;
-        chart_gauge_[%=i%].animationSpeed = 32;
-        chart_gauge_[%=i%].set([%=kpi.value.getValue()*100/kpi.value.getTargetValue()%]);
-        chart_gauge_[%=i%].setTextField(document.getElementById("gauge-text-[%=i%]"));
-
-    }
-    [%
-    }else if(kpi.value.valuetype.isTypeOf(AggregatedRangedValue)){%]
      
+    }
     
-    
-    [% }else if(kpi.value.valuetype.isTypeOf(BoolValue)){}
-    	i++;
-   }
-    %]
    } 
-    init_gauge();
+   
+  var gauges =  document.getElementsByClassName("gauges");
+  if(gauges!=null)  init_gauge(gauges);
  </script>
     
 </body>

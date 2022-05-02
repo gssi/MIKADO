@@ -55,7 +55,7 @@
                       
                         <h4><i class="fa fa-area-chart"></i>mykpi (mykpi desc)</a></h4>
                        
-                        <canvas width="150" height="80" id="chart_gauge_0" class="" style="width: 180px; height: 100px;"></canvas>
+                        <canvas width="150" height="80" id="chart_gauge_0" class="gauges" style="width: 180px; height: 100px;" data-value="12"></canvas>
                         <div class="goal-wrapper">
                           <span id="gauge-text-0" class="gauge-value gauge-chart pull-left">10.0</span>
                           <span class="gauge-value pull-left">%</span>
@@ -132,12 +132,9 @@
 
     <!-- Custom Theme Scripts -->
       <script >
-        function init_gauge() {
+     function init_gauge(gauges) {
 
     if (typeof (Gauge) === 'undefined') { return; }
-
-   
-
 
     var chart_gauge_settings = {
         lines: 12,
@@ -155,26 +152,25 @@
         generateGradient: true
     };
 
-    if ($('#chart_gauge_0').length) {
-
-        var chart_gauge_0_elem = document.getElementById('chart_gauge_0');
-        var chart_gauge_0 = new Gauge(chart_gauge_0_elem).setOptions(chart_gauge_settings);
-
-    }
-    
-    if ($('#gauge-text-0').length) {
-
-        chart_gauge_0.maxValue =  100;
-        chart_gauge_0.animationSpeed = 32;
-        chart_gauge_0.set(5.166666681567828);
-        chart_gauge_0.setTextField(document.getElementById("gauge-text-0"));
-
+for (var i = 0; i < gauges.length; ++i) {
+ 
+    var gauge = gauges[i];
+  
+    if (gauge!=null) {
+	
+       
+        var chart_gauge = new Gauge(gauge).setOptions(chart_gauge_settings);
+ 		chart_gauge.maxValue =  100;
+        chart_gauge.animationSpeed = 32;
+		chart_gauge.set(gauge.getAttribute('data-value'));
     }
      
-    
+    }
     
    } 
-    init_gauge();
+   
+  var gauges =  document.getElementsByClassName("gauges");
+  if(gauges!=null)  init_gauge(gauges);
  </script>
     
 </body>
