@@ -37,7 +37,7 @@ public class EvaluationStandaloneLauncher {
 		sourceScProperties.setProperty(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI, scMM);
 		
 		//Scanner sc= new Scanner(System.in);
-		System.out.println("Enter the kpi model relative path");
+		//System.out.println("Enter the kpi model relative path");
 		
 		sourceProperties.setProperty(EmfModel.PROPERTY_MODEL_URI,
 				"model/mykpi.flexmi.xmi"
@@ -46,7 +46,7 @@ public class EvaluationStandaloneLauncher {
 		sourceProperties.setProperty(EmfModel.PROPERTY_READONLOAD, "true");
 		
 		//sc= new Scanner(System.in);
-		System.out.println("Enter the smart city model relative path");
+		//System.out.println("Enter the smart city model relative path");
 		
 		
 		sourceScProperties.setProperty(EmfModel.PROPERTY_MODEL_URI,

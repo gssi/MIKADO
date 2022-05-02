@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<kpi:KpiModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kpi="http://cs.gssi.it/kpi" xsi:schemaLocation="http://cs.gssi.it/kpi metamodels/kpi.ecore" subject="L'Aquila" evaldate="2022-05-02T19:57:13.106+0200">
+<kpi:KpiModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kpi="http://cs.gssi.it/kpi" xsi:schemaLocation="http://cs.gssi.it/kpi metamodels/kpi.ecore" subject="L'Aquila" evaldate="2022-05-02T21:02:47.374+0200">
   <dimensions name="Environment">
     <categories name="Public Spaces">
       <kpis name="GA" description="Green Areas" unit="green spaces">
