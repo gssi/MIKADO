@@ -36,20 +36,22 @@ public class EvaluationStandaloneLauncher {
 		sourceScProperties.setProperty(EmfModel.PROPERTY_NAME, "sc");
 		sourceScProperties.setProperty(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI, scMM);
 		
-		Scanner sc= new Scanner(System.in);
+		//Scanner sc= new Scanner(System.in);
 		System.out.println("Enter the kpi model relative path");
 		
 		sourceProperties.setProperty(EmfModel.PROPERTY_MODEL_URI,
-			sc.nextLine()
+				"model/mykpi.flexmi.xmi"
+			//sc.nextLine()
 		);
 		sourceProperties.setProperty(EmfModel.PROPERTY_READONLOAD, "true");
 		
-		sc= new Scanner(System.in);
+		//sc= new Scanner(System.in);
 		System.out.println("Enter the smart city model relative path");
 		
 		
 		sourceScProperties.setProperty(EmfModel.PROPERTY_MODEL_URI,
-				sc.nextLine()
+			//	sc.nextLine()
+				"model/aq.flexmi.xmi"
 			);
 		sourceScProperties.setProperty(EmfModel.PROPERTY_READONLOAD, "true");
 		
@@ -57,7 +59,7 @@ public class EvaluationStandaloneLauncher {
 		targetProperties.setProperty(EmfModel.PROPERTY_NAME, "Target");
 		targetProperties.setProperty(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI, kpiMM);
 		targetProperties.setProperty(EmfModel.PROPERTY_MODEL_URI,
-				"model/evaluated.xmi"
+				"model/evaluated.model"
 		);
 		targetProperties.setProperty(EmfModel.PROPERTY_READONLOAD, "false");
 		targetProperties.setProperty(EmfModel.PROPERTY_STOREONDISPOSAL, "true");

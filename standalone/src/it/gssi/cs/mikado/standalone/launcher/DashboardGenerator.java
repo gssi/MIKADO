@@ -52,6 +52,7 @@ public class DashboardGenerator {
 			.build();
 		
 		runConfig.run();
+		System.out.println("Generated in: gen/ folder");
 	}
 
 }

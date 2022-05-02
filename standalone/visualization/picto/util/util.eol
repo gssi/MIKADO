@@ -1,7 +1,16 @@
+operation Real getRounded():Real{
+var decimal = new Native("java.text.DecimalFormat");
+decimal.applyPattern("#.#####");
+return decimal.format(self).asReal();
+//return self.asReal();
+}
+
 operation kpi_model::Value getValue(){
 
 	return self.valuetype.getActualizedValue();
 }
+
+
 operation kpi_model::Value getTargetValue(){
 	return self.valuetype.getTargetValue();
 
@@ -11,12 +20,13 @@ operation kpi_model::AggregatedValue getActualizedValue(){
 if(self.actualizedvalue<1) return self.actualizedvalue+0.1;
 	return self.actualizedvalue;
 }
+
 operation kpi_model::CalculatedValue getActualizedValue(){
 	return self.actualizedvalue;
 }
 
 operation kpi_model::AggregatedRangedValue getTargetValue(){
-	return self.ranges.name;
+	return self.targetvalue;
 }
 
 operation kpi_model::AggregatedIntegerValue getTargetValue(){
@@ -26,7 +36,7 @@ operation kpi_model::AggregatedIntegerValue getTargetValue(){
 operation kpi_model::AggregatedRealValue getTargetValue(){
 	return self.targetvalue;
 }
-operation kpi_model::SingleValue getTargetValue(){
+operation kpi_model::SingleNonStaticValue getTargetValue(){
 	return self.targetvalue;
 }
 

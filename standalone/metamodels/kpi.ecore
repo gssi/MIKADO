@@ -59,10 +59,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StaticIntegerValue" eSuperTypes="#//CalculatedValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="actualizedvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BoolValue" eSuperTypes="#//SingleNonStaticValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="actualizedvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RealValue" eSuperTypes="#//SingleNonStaticValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="actualizedvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>

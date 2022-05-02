@@ -80,7 +80,7 @@ rule StaticIntegerValue
 transform single: Source!StaticIntegerValue
 to eval: Target!StaticIntegerValue{
 	eval.actualizedvalue = single.get(smartcity);
-	eval.targetvalue = single.targetvalue;
+	
 }
 
 rule RealValue
@@ -88,7 +88,7 @@ transform single: Source!RealValue
 to eval: Target!RealValue{
 eval.actualizedvalue = single.get(smartcity);
 eval.parameter ::= single.parameter;
-eval.targetvalue = single.targetvalue;
+eval.targetvalue = single.targetvalue.ifUndefined(0);
 }
 
 rule BoolValue
@@ -96,7 +96,7 @@ transform single: Source!BoolValue
 to eval: Target!BoolValue{
 eval.actualizedvalue = single.get(smartcity);
 eval.parameter ::= single.parameter;
-eval.targetvalue = single.targetvalue;
+eval.targetvalue = single.targetvalue.ifUndefined(false);
 }
 
 
@@ -105,7 +105,7 @@ transform single: Source!StringValue
 to eval: Target!StringValue{
 eval.actualizedvalue = single.get(smartcity);
 eval.parameter ::= single.parameter;	
-eval.targetvalue = single.targetvalue;
+eval.targetvalue = single.targetvalue.ifUndefined("");
 }
 
 rule RangedValue
@@ -127,16 +127,16 @@ eval.max=range.max;
 rule AggregatedRealValue
 transform aggr: Source!AggregatedRealValue
 to eval: Target!AggregatedRealValue{
-eval.oper=aggr.oper;
+eval.oper = aggr.oper.equivalent();
 eval.values::= aggr.values;
-eval.actualizedvalue =  aggr.get(smartcity);
+eval.actualizedvalue =  aggr.get(smartcity).asReal();
 eval.targetvalue = aggr.targetvalue;
 }
 
 rule AggregatedBoolValue
 transform aggr: Source!AggregatedBoolValue
 to eval: Target!AggregatedBoolValue{
-eval.oper=aggr.oper;
+eval.oper::=aggr.oper;
 eval.values::= aggr.values;
 eval.actualizedvalue = aggr.get(smartcity);
 eval.targetvalue = aggr.targetvalue;

@@ -1,3 +1,9 @@
+operation Real getRounded():Real{
+var decimal = new Native("java.text.DecimalFormat");
+decimal.applyPattern("###.###");
+return decimal.format(self).asReal();
+//return self.asReal();
+}
 
 operation Source!StaticRealValue get(city: sc!SmartCity): Any{
 	return self.actualizedvalue;
@@ -11,8 +17,9 @@ operation Source!StaticIntegerValue get(city: sc!SmartCity): Any{
 	return self.actualizedvalue;
 }
 
-operation Source!RealValue get(city: sc!SmartCity): Real{
+operation Source!RealValue get(city: sc!smartcity::SmartCity): Real{
 var data = sc!Data.all;
+
 if(data.exists(d|d.name.toLowerCase()==self.parameter.name.toLowerCase() and d.eClass.name==self.eClass.name)){ 
 return data.selectOne(d|d.name.toLowerCase()==self.parameter.name.toLowerCase() and d.eClass.name==self.eClass.name).value;
 }
@@ -40,7 +47,7 @@ return data.selectOne(d|d.name.toLowerCase()==self.parameter.name.toLowerCase() 
 }
 
 operation Source!AggregatedRealValue get(city: sc!SmartCity): Any{
-
+//self.values.equivalent().collect(e|e.actualizedvalue).println();
 return self.values.equivalent().collect(e|e.actualizedvalue).getop(self.oper);
 	
 }
@@ -53,7 +60,7 @@ return self.ranges.selectOne(r|r.min <= value and r.max >= value).name;
 
 
 
-operation Any getop(op: Source!EEnumLiteral): Any{
+operation Any getop(op: Any): Any{
 
 switch (op) {
 case Source!Operation#GET: return self;

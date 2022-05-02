@@ -1,30 +1,114 @@
 <?xml version="1.0" encoding="ASCII"?>
-<kpi:KpiModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kpi="http://cs.gssi.it/kpi" xmi:id="_-qYTYMcDEey-SK_On9gwOQ">
-  <dimensions xmi:id="_-qYTYccDEey-SK_On9gwOQ" name="dim">
-    <categories xmi:id="_-qYTYscDEey-SK_On9gwOQ" name="cat">
-      <kpis xmi:id="_-qYTY8cDEey-SK_On9gwOQ" name="mykpi" description="mykpi desc">
-        <value xmi:id="_-qYTZMcDEey-SK_On9gwOQ">
-          <valuetype xsi:type="kpi:AggregatedRealValue" xmi:id="_-qYTZccDEey-SK_On9gwOQ" oper="DIV" targetvalue="10.0">
-            <values xsi:type="kpi:AggregatedRealValue" xmi:id="_-qYTZscDEey-SK_On9gwOQ" oper="MULT" targetvalue="12.0">
-              <values xsi:type="kpi:RealValue" xmi:id="_-qYTZ8cDEey-SK_On9gwOQ" parameter="_-qYTcccDEey-SK_On9gwOQ"/>
-              <values xsi:type="kpi:StaticRealValue" xmi:id="_-qYTaMcDEey-SK_On9gwOQ" actualizedvalue="2.0"/>
+<kpi:KpiModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kpi="http://cs.gssi.it/kpi" xmi:id="_ahJMkMo-Eey-SK_On9gwOQ">
+  <dimensions xmi:id="_ahJMkco-Eey-SK_On9gwOQ" name="Environment">
+    <categories xmi:id="_ahJMkso-Eey-SK_On9gwOQ" name="Public Spaces">
+      <kpis xmi:id="_ahJMk8o-Eey-SK_On9gwOQ" name="GA" description="Green Areas" unit="green spaces">
+        <value xmi:id="_ahJMlMo-Eey-SK_On9gwOQ">
+          <valuetype xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMlco-Eey-SK_On9gwOQ" oper="DIV" targetvalue="100.0">
+            <values xsi:type="kpi:RealValue" xmi:id="_ahJMlso-Eey-SK_On9gwOQ" parameter="_ahJMqco-Eey-SK_On9gwOQ"/>
+            <values xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMl8o-Eey-SK_On9gwOQ" oper="MULT">
+              <values xsi:type="kpi:RealValue" xmi:id="_ahJMmMo-Eey-SK_On9gwOQ" parameter="_ahJMqMo-Eey-SK_On9gwOQ"/>
+              <values xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMmco-Eey-SK_On9gwOQ" oper="DIV">
+                <values xsi:type="kpi:StaticRealValue" xmi:id="_ahJMmso-Eey-SK_On9gwOQ" actualizedvalue="1.0"/>
+                <values xsi:type="kpi:StaticRealValue" xmi:id="_ahJMm8o-Eey-SK_On9gwOQ" actualizedvalue="100000.0"/>
+              </values>
             </values>
-            <values xsi:type="kpi:RealValue" xmi:id="_-qYTaccDEey-SK_On9gwOQ" parameter="_-qYTcscDEey-SK_On9gwOQ"/>
           </valuetype>
         </value>
       </kpis>
-      <kpis xmi:id="_-qYTascDEey-SK_On9gwOQ" name="mysecondkpi" description="mykpi desc">
-        <value xmi:id="_-qYTa8cDEey-SK_On9gwOQ">
-          <valuetype xsi:type="kpi:AggregatedRangedValue" xmi:id="_-qYTbMcDEey-SK_On9gwOQ">
-            <values xsi:type="kpi:StaticRealValue" xmi:id="_-qYTbccDEey-SK_On9gwOQ" actualizedvalue="3.0"/>
-            <ranges xmi:id="_-qYTbscDEey-SK_On9gwOQ" name="MIN" max="5.0"/>
-            <ranges xmi:id="_-qYTb8cDEey-SK_On9gwOQ" name="MEDIUM" min="5.1" max="10.0"/>
-            <ranges xmi:id="_-qYTcMcDEey-SK_On9gwOQ" name="MAX" min="10.0" max="9999.0"/>
+      <kpis xmi:id="_ahJMnMo-Eey-SK_On9gwOQ" name="BN" description="Bike path length" unit="KM">
+        <value xmi:id="_ahJMnco-Eey-SK_On9gwOQ">
+          <valuetype xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMnso-Eey-SK_On9gwOQ" oper="DIV" targetvalue="230.0">
+            <values xsi:type="kpi:RealValue" xmi:id="_ahJMn8o-Eey-SK_On9gwOQ" parameter="_ahJMqso-Eey-SK_On9gwOQ"/>
+            <values xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMoMo-Eey-SK_On9gwOQ" oper="MULT">
+              <values xsi:type="kpi:RealValue" xmi:id="_ahJMoco-Eey-SK_On9gwOQ" parameter="_ahJMqMo-Eey-SK_On9gwOQ"/>
+              <values xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMoso-Eey-SK_On9gwOQ" oper="DIV">
+                <values xsi:type="kpi:StaticRealValue" xmi:id="_ahJMo8o-Eey-SK_On9gwOQ" actualizedvalue="1.0"/>
+                <values xsi:type="kpi:StaticRealValue" xmi:id="_ahJMpMo-Eey-SK_On9gwOQ" actualizedvalue="100000.0"/>
+              </values>
+            </values>
           </valuetype>
         </value>
       </kpis>
-      <parameters xmi:id="_-qYTcccDEey-SK_On9gwOQ" name="par1"/>
-      <parameters xmi:id="_-qYTcscDEey-SK_On9gwOQ" name="par2"/>
+      <kpis xmi:id="_ahJMpco-Eey-SK_On9gwOQ" name="TMS" description="availability of transport monitoring service">
+        <value xmi:id="_ahJMpso-Eey-SK_On9gwOQ">
+          <valuetype xsi:type="kpi:BoolValue" xmi:id="_ahJMp8o-Eey-SK_On9gwOQ" parameter="_ahJMsMo-Eey-SK_On9gwOQ"/>
+        </value>
+      </kpis>
+      <parameters xmi:id="_ahJMqMo-Eey-SK_On9gwOQ" name="citypop"/>
+      <parameters xmi:id="_ahJMqco-Eey-SK_On9gwOQ" name="TGA"/>
+      <parameters xmi:id="_ahJMqso-Eey-SK_On9gwOQ" name="BLP"/>
+      <parameters xmi:id="_ahJMq8o-Eey-SK_On9gwOQ" name="PM2.5"/>
+      <parameters xmi:id="_ahJMrMo-Eey-SK_On9gwOQ" name="PM10"/>
+      <parameters xmi:id="_ahJMrco-Eey-SK_On9gwOQ" name="NO2"/>
+      <parameters xmi:id="_ahJMrso-Eey-SK_On9gwOQ" name="O3"/>
+      <parameters xmi:id="_ahJMr8o-Eey-SK_On9gwOQ" name="SO2"/>
+      <parameters xmi:id="_ahJMsMo-Eey-SK_On9gwOQ" name="TM"/>
+    </categories>
+    <categories xmi:id="_ahJMsco-Eey-SK_On9gwOQ" name="Air Quality">
+      <kpis xmi:id="_ahJMsso-Eey-SK_On9gwOQ" name="AQI" description="Air quality Index">
+        <value xmi:id="_ahJMs8o-Eey-SK_On9gwOQ">
+          <valuetype xsi:type="kpi:AggregatedRangedValue" xmi:id="_ahJMtMo-Eey-SK_On9gwOQ">
+            <values xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMtco-Eey-SK_On9gwOQ" oper="MAX">
+              <values xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMtso-Eey-SK_On9gwOQ" oper="MULT">
+                <values xsi:type="kpi:StaticRealValue" xmi:id="_ahJMt8o-Eey-SK_On9gwOQ" actualizedvalue="100.0"/>
+                <values xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMuMo-Eey-SK_On9gwOQ" oper="DIV">
+                  <values xsi:type="kpi:RealValue" xmi:id="_ahJMuco-Eey-SK_On9gwOQ" parameter="_ahJMq8o-Eey-SK_On9gwOQ"/>
+                  <values xsi:type="kpi:StaticRealValue" xmi:id="_ahJMuso-Eey-SK_On9gwOQ" actualizedvalue="25.0"/>
+                </values>
+              </values>
+              <values xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMu8o-Eey-SK_On9gwOQ" oper="MULT">
+                <values xsi:type="kpi:StaticRealValue" xmi:id="_ahJMvMo-Eey-SK_On9gwOQ" actualizedvalue="100.0"/>
+                <values xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMvco-Eey-SK_On9gwOQ" oper="DIV">
+                  <values xsi:type="kpi:RealValue" xmi:id="_ahJMvso-Eey-SK_On9gwOQ" parameter="_ahJMrMo-Eey-SK_On9gwOQ"/>
+                  <values xsi:type="kpi:StaticRealValue" xmi:id="_ahJMv8o-Eey-SK_On9gwOQ" actualizedvalue="50.0"/>
+                </values>
+              </values>
+              <values xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMwMo-Eey-SK_On9gwOQ" oper="MULT">
+                <values xsi:type="kpi:StaticRealValue" xmi:id="_ahJMwco-Eey-SK_On9gwOQ" actualizedvalue="100.0"/>
+                <values xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMwso-Eey-SK_On9gwOQ" oper="DIV">
+                  <values xsi:type="kpi:RealValue" xmi:id="_ahJMw8o-Eey-SK_On9gwOQ" parameter="_ahJMrco-Eey-SK_On9gwOQ"/>
+                  <values xsi:type="kpi:StaticRealValue" xmi:id="_ahJMxMo-Eey-SK_On9gwOQ" actualizedvalue="200.0"/>
+                </values>
+              </values>
+              <values xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMxco-Eey-SK_On9gwOQ" oper="MULT">
+                <values xsi:type="kpi:StaticRealValue" xmi:id="_ahJMxso-Eey-SK_On9gwOQ" actualizedvalue="100.0"/>
+                <values xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMx8o-Eey-SK_On9gwOQ" oper="DIV">
+                  <values xsi:type="kpi:RealValue" xmi:id="_ahJMyMo-Eey-SK_On9gwOQ" parameter="_ahJMrso-Eey-SK_On9gwOQ"/>
+                  <values xsi:type="kpi:StaticRealValue" xmi:id="_ahJMyco-Eey-SK_On9gwOQ" actualizedvalue="180.0"/>
+                </values>
+              </values>
+              <values xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMyso-Eey-SK_On9gwOQ" oper="MULT">
+                <values xsi:type="kpi:StaticRealValue" xmi:id="_ahJMy8o-Eey-SK_On9gwOQ" actualizedvalue="100.0"/>
+                <values xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJMzMo-Eey-SK_On9gwOQ" oper="DIV">
+                  <values xsi:type="kpi:RealValue" xmi:id="_ahJMzco-Eey-SK_On9gwOQ" parameter="_ahJMr8o-Eey-SK_On9gwOQ"/>
+                  <values xsi:type="kpi:StaticRealValue" xmi:id="_ahJMzso-Eey-SK_On9gwOQ" actualizedvalue="350.0"/>
+                </values>
+              </values>
+            </values>
+            <ranges xmi:id="_ahJMz8o-Eey-SK_On9gwOQ" name="Excellent" max="30.0"/>
+            <ranges xmi:id="_ahJM0Mo-Eey-SK_On9gwOQ" name="Good" min="30.1" max="66.0"/>
+            <ranges xmi:id="_ahJM0co-Eey-SK_On9gwOQ" name="Bad" min="66.1" max="150.0"/>
+            <ranges xmi:id="_ahJM0so-Eey-SK_On9gwOQ" name="Terrible" min="150.1" max="999.0"/>
+          </valuetype>
+        </value>
+      </kpis>
+      <kpis xmi:id="_ahJM08o-Eey-SK_On9gwOQ" name="NO2 emissions" unit="ng/m3">
+        <value xmi:id="_ahJM1Mo-Eey-SK_On9gwOQ">
+          <valuetype xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJM1co-Eey-SK_On9gwOQ" oper="DIV" targetvalue="1.0">
+            <values xsi:type="kpi:RealValue" xmi:id="_ahJM1so-Eey-SK_On9gwOQ" parameter="_ahJMrco-Eey-SK_On9gwOQ"/>
+            <values xsi:type="kpi:RealValue" xmi:id="_ahJM18o-Eey-SK_On9gwOQ" parameter="_ahJMqMo-Eey-SK_On9gwOQ"/>
+          </valuetype>
+        </value>
+      </kpis>
+      <kpis xmi:id="_ahJM2Mo-Eey-SK_On9gwOQ" name="PM2.5 emissions" unit="ng/m3">
+        <value xmi:id="_ahJM2co-Eey-SK_On9gwOQ">
+          <valuetype xsi:type="kpi:AggregatedRealValue" xmi:id="_ahJM2so-Eey-SK_On9gwOQ" oper="DIV" targetvalue="1.0">
+            <values xsi:type="kpi:RealValue" xmi:id="_ahJM28o-Eey-SK_On9gwOQ" parameter="_ahJMq8o-Eey-SK_On9gwOQ"/>
+            <values xsi:type="kpi:RealValue" xmi:id="_ahJM3Mo-Eey-SK_On9gwOQ" parameter="_ahJMqMo-Eey-SK_On9gwOQ"/>
+          </valuetype>
+        </value>
+      </kpis>
     </categories>
   </dimensions>
 </kpi:KpiModel>
