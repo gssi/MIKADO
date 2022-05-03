@@ -11,6 +11,8 @@ var smartcity=sc!SmartCity.all.first;
 ("Evaluating "+smartcity.city+"...").println();
 }
 
+
+
 rule kpi2evaluated
 transform kpimodel : Source!KpiModel
 to evaluated: Target!KpiModel{
@@ -84,6 +86,7 @@ rule StaticIntegerValue
 transform single: Source!StaticIntegerValue
 to eval: Target!StaticIntegerValue{
 	eval.actualizedvalue = single.get(smartcity);
+	eval.targetvalue = single.targetvalue;
 	
 }
 
@@ -180,5 +183,7 @@ post{
 var end = instant.now();
 var elapsedTime : Real = duration.between(start,end).toMillis();
 ("Runtime evaluation took "+elapsedTime+" ms").println();
+
+
 }
 

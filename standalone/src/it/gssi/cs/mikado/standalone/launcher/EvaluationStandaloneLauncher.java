@@ -3,6 +3,7 @@ package it.gssi.cs.mikado.standalone.launcher;
 import java.io.Console;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import org.eclipse.epsilon.common.util.StringProperties;
@@ -40,7 +41,7 @@ public class EvaluationStandaloneLauncher {
 		//System.out.println("Enter the kpi model relative path");
 		
 		sourceProperties.setProperty(EmfModel.PROPERTY_MODEL_URI,
-				"model/mykpi.flexmi.xmi"
+				"model/newkpi.flexmi.xmi"
 			//sc.nextLine()
 		);
 		sourceProperties.setProperty(EmfModel.PROPERTY_READONLOAD, "true");
@@ -72,9 +73,12 @@ public class EvaluationStandaloneLauncher {
 			.withModel(target, targetProperties)
 			.build();
 		
+	
 		runConfig.run();
+			
 		runConfig.dispose();
 		target.dispose();
+		
 		
 		DashboardGenerator gen = new DashboardGenerator();
 		gen.genDashboard(target.getModelFile());

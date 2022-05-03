@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kpi:KpiModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kpi="http://cs.gssi.it/kpi" xmi:id="_aNv1wMsKEey-SK_On9gwOQ">
+  <dimensions xmi:id="_aNv1wcsKEey-SK_On9gwOQ" name="Dimname">
+    <categories xmi:id="_aNv1wssKEey-SK_On9gwOQ" name="Catname">
+      <kpis xmi:id="_aNv1w8sKEey-SK_On9gwOQ" name="mykpi">
+        <value xmi:id="_aNv1xMsKEey-SK_On9gwOQ">
+          <valuetype xsi:type="kpi:StaticIntegerValue" xmi:id="_aNv1xcsKEey-SK_On9gwOQ" actualizedvalue="1" targetvalue="20"/>
+        </value>
+      </kpis>
+    </categories>
+  </dimensions>
+</kpi:KpiModel>

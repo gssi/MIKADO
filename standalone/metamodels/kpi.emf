@@ -71,7 +71,7 @@ class StaticIntegerValue extends CalculatedValue {
 
 class BoolValue extends SingleNonStaticValue {
   attr boolean actualizedvalue;
-   attr boolean targetvalue = true;
+   attr boolean targetvalue  = true;
 }
 class RealValue extends SingleNonStaticValue {
   attr double actualizedvalue;

@@ -52,6 +52,12 @@
     <artifactId>org.eclipse.epsilon.flexmi</artifactId>
     <version>2.4.0</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.eclipse.epsilon/org.eclipse.epsilon.evl.engine -->
+<dependency>
+    <groupId>org.eclipse.epsilon</groupId>
+    <artifactId>org.eclipse.epsilon.evl.engine</artifactId>
+    <version>2.4.0</version>
+</dependency>
 
   </dependencies>
 </project>

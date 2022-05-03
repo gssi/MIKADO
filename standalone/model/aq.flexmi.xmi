@@ -1,17 +1,64 @@
 <?xml version="1.0" encoding="ASCII"?>
-<smartcity:SmartCity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:smartcity="http://cs.gssi.it/smartcity" xmi:id="_DJQOMMpAEey-SK_On9gwOQ" city="L'Aquila">
-  <stakeholders xmi:id="_DJQOMcpAEey-SK_On9gwOQ" name="Comune" organization="Comune"/>
-  <data xmi:id="_DJQOMspAEey-SK_On9gwOQ" name="statistics">
-    <data xsi:type="smartcity:RealValue" xmi:id="_DJQOM8pAEey-SK_On9gwOQ" name="citypop" unit="inhabitants" value="70000.0"/>
-    <data xsi:type="smartcity:RealValue" xmi:id="_DJQONMpAEey-SK_On9gwOQ" name="BLP" unit="km" value="86.0"/>
-    <data xsi:type="smartcity:RealValue" xmi:id="_DJQONcpAEey-SK_On9gwOQ" name="TGA" unit="hectars" value="48.0"/>
-    <data xsi:type="smartcity:BoolValue" xmi:id="_DJQONspAEey-SK_On9gwOQ" name="TM" unit="availability" value="true"/>
+<smartcity:SmartCity
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:smartcity="http://cs.gssi.it/smartcity"
+    xmi:id="_DJQOMMpAEey-SK_On9gwOQ"
+    city="L'Aquila">
+  <stakeholders
+      xmi:id="_DJQOMcpAEey-SK_On9gwOQ"
+      name="Comune"
+      organization="Comune"/>
+  <data xmi:id="_DJQOMspAEey-SK_On9gwOQ"
+      name="statistics">
+    <data xsi:type="smartcity:RealValue"
+        xmi:id="_DJQOM8pAEey-SK_On9gwOQ"
+        name="citypop"
+        unit="inhabitants"
+        value="70000.0"/>
+    <data xsi:type="smartcity:RealValue"
+        xmi:id="_DJQONMpAEey-SK_On9gwOQ"
+        name="BLP"
+        unit="km"
+        value="86.0"/>
+    <data xsi:type="smartcity:RealValue"
+        xmi:id="_DJQONcpAEey-SK_On9gwOQ"
+        name="TGA"
+        unit="hectars"
+        value="48.0"/>
+    <data xsi:type="smartcity:BoolValue"
+        xmi:id="_DJQONspAEey-SK_On9gwOQ"
+        name="TM"
+        unit="availability"
+        value="true"/>
   </data>
-  <data xmi:id="_DJQON8pAEey-SK_On9gwOQ" name="air quality">
-    <data xsi:type="smartcity:RealValue" xmi:id="_DJQOOMpAEey-SK_On9gwOQ" name="PM2.5" unit="ng/m3" value="11.19"/>
-    <data xsi:type="smartcity:RealValue" xmi:id="_DJQ1QMpAEey-SK_On9gwOQ" name="PM10" unit="ng/m3" value="12.0"/>
-    <data xsi:type="smartcity:RealValue" xmi:id="_DJQ1QcpAEey-SK_On9gwOQ" name="NO2" unit="ng/m3" value="18.0"/>
-    <data xsi:type="smartcity:RealValue" xmi:id="_DJQ1QspAEey-SK_On9gwOQ" name="O3" unit="ng/m3" value="25.0"/>
-    <data xsi:type="smartcity:RealValue" xmi:id="_DJQ1Q8pAEey-SK_On9gwOQ" name="SO2" unit="ng/m3" value="0.2"/>
+  <data xmi:id="_DJQON8pAEey-SK_On9gwOQ"
+      name="air quality">
+    <data xsi:type="smartcity:RealValue"
+        xmi:id="_DJQOOMpAEey-SK_On9gwOQ"
+        name="PM2.5"
+        unit="ng/m3"
+        value="11.19"/>
+    <data xsi:type="smartcity:RealValue"
+        xmi:id="_DJQ1QMpAEey-SK_On9gwOQ"
+        name="PM10"
+        unit="ng/m3"
+        value="12.0"/>
+    <data xsi:type="smartcity:RealValue"
+        xmi:id="_DJQ1QcpAEey-SK_On9gwOQ"
+        name="NO2"
+        unit="ng/m3"
+        value="18.0"/>
+    <data xsi:type="smartcity:RealValue"
+        xmi:id="_DJQ1QspAEey-SK_On9gwOQ"
+        name="O3"
+        unit="ng/m3"
+        value="25.0"/>
+    <data xsi:type="smartcity:RealValue"
+        xmi:id="_DJQ1Q8pAEey-SK_On9gwOQ"
+        name="SO2"
+        unit="ng/m3"
+        value="0.2"/>
   </data>
 </smartcity:SmartCity>

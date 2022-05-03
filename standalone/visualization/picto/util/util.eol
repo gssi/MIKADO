@@ -25,6 +25,19 @@ operation kpi_model::CalculatedValue getActualizedValue(){
 	return self.actualizedvalue;
 }
 
+
+operation kpi_model::StaticRealValue getTargetValue(){
+	return self.targetvalue;
+}
+
+operation kpi_model::StaticIntegerValue getTargetValue(){
+	return self.targetvalue;
+}
+
+operation kpi_model::StaticBoolValue getTargetValue(){
+	return self.targetvalue;
+}
+
 operation kpi_model::AggregatedRangedValue getTargetValue(){
 	return self.targetvalue;
 }
@@ -36,6 +49,7 @@ operation kpi_model::AggregatedIntegerValue getTargetValue(){
 operation kpi_model::AggregatedRealValue getTargetValue(){
 	return self.targetvalue;
 }
+
 operation kpi_model::SingleNonStaticValue getTargetValue(){
 	return self.targetvalue;
 }

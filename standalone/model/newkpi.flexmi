@@ -1,0 +1,14 @@
+?nsuri: http://cs.gssi.it/kpi  
+
+KpiModel: {
+    Dimension: {
+    name: Dimname,
+        Category: {
+        name: Catname,
+            parameters:{}, 
+        kpis: { Kpi: {name: mykpi, value: {valuetype: {
+            StaticIntegerValue: {actualizedvalue: 1 , targetvalue: 20   }
+        }}}}
+        }
+    }
+} 

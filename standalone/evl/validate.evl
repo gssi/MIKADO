@@ -1,0 +1,25 @@
+pre {
+var instant = Native("java.time.Instant");
+var duration = Native("java.time.Duration");
+
+var start = instant.now();
+
+  var smartcity = sc!SmartCity.all.first;
+  var datascmodel = sc!Data.all;
+ 
+}
+
+context SingleNonStaticValue {
+
+  constraint ValidParameter {
+    
+    check : datascmodel.name.includes(self.parameter.name)
+    message: "No defined parameter for "+self.parameter.name+" in smart city: "+smartcity.city
+  }
+}
+
+post{
+var end = instant.now();
+var elapsedTime : Real = duration.between(start,end).toMillis();
+("Validation took "+elapsedTime+" ms").println();
+}
