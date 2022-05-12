@@ -1,18 +1,21 @@
 package it.gssi.cs.mikado.standalone.launcher;
 
+import java.util.Collection;
+
 import org.eclipse.epsilon.common.util.StringProperties;
 import org.eclipse.epsilon.emc.emf.EmfModel;
+import org.eclipse.epsilon.evl.execute.UnsatisfiedConstraint;
 import org.eclipse.epsilon.evl.launch.EvlRunConfiguration;
 
 public class ModelsValidator {
 	public static void main(String... args) throws Exception {
 		ModelsValidator validator = new ModelsValidator();
 		
-		validator.validate("model/mykpi.flexmi.xmi", "model/aq.flexmi.xmi");
-		
+		Collection<UnsatisfiedConstraint> violation = validator.validate("model/mykpi.flexmi.xmi", "model/aq.flexmi.xmi");
+		System.out.println(violation.size());
 	}
 	
-	public void validate(String kpimodel, String scmodel) {
+	public Collection<UnsatisfiedConstraint> validate(String kpimodel, String scmodel) {
 		
 		String kpiMM = "metamodels/kpi.ecore";
 		String scMM = "metamodels/smart_city.ecore";
@@ -45,11 +48,12 @@ public class ModelsValidator {
 			.withScript("evl/validate.evl")
 			.withModel(new EmfModel(), modelProperties)
 			.withModel(new EmfModel(), scProperties)
-			//.withProfiling()
+			.withProfiling()
 			.withResults()
 			.withParallelism()
 			.build();
 		
 		runConfig.run();
+		return runConfig.getModule().getContext().getUnsatisfiedConstraints();
 	}
 }

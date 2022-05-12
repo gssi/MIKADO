@@ -3,12 +3,14 @@ package it.gssi.cs.mikado.standalone.launcher;
 import java.io.Console;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.Scanner;
 
 import org.eclipse.epsilon.common.util.StringProperties;
 import org.eclipse.epsilon.emc.emf.EmfModel;
 import org.eclipse.epsilon.etl.launch.EtlRunConfiguration;
+import org.eclipse.epsilon.evl.execute.UnsatisfiedConstraint;
 
 /**
  * This example demonstrates using the 
@@ -26,7 +28,8 @@ public class EvaluationStandaloneLauncher {
 		
 		String kpiMM = "metamodels/kpi.ecore";
 		String scMM = "metamodels/smart_city.ecore";
-
+		String kpimodel ="model/mykpi.flexmi.xmi";
+		String scmodel ="model/aq.flexmi.xmi";
 		StringProperties sourceProperties = new StringProperties();
 		//kpi metamodel
 		sourceProperties.setProperty(EmfModel.PROPERTY_NAME, "Source");
@@ -41,7 +44,7 @@ public class EvaluationStandaloneLauncher {
 		//System.out.println("Enter the kpi model relative path");
 		
 		sourceProperties.setProperty(EmfModel.PROPERTY_MODEL_URI,
-				"model/newkpi.flexmi.xmi"
+				kpimodel
 			//sc.nextLine()
 		);
 		sourceProperties.setProperty(EmfModel.PROPERTY_READONLOAD, "true");
@@ -52,8 +55,13 @@ public class EvaluationStandaloneLauncher {
 		
 		sourceScProperties.setProperty(EmfModel.PROPERTY_MODEL_URI,
 			//	sc.nextLine()
-				"model/aq.flexmi.xmi"
+				scmodel
 			);
+		
+		ModelsValidator validator = new ModelsValidator();
+		Collection<UnsatisfiedConstraint> violations = validator.validate(kpimodel, scmodel);
+		
+		
 		sourceScProperties.setProperty(EmfModel.PROPERTY_READONLOAD, "true");
 		
 		StringProperties targetProperties = new StringProperties();
@@ -73,7 +81,7 @@ public class EvaluationStandaloneLauncher {
 			.withModel(target, targetProperties)
 			.build();
 		
-	
+		if(violations.size()==0) {
 		runConfig.run();
 			
 		runConfig.dispose();
@@ -83,6 +91,8 @@ public class EvaluationStandaloneLauncher {
 		DashboardGenerator gen = new DashboardGenerator();
 		gen.genDashboard(target.getModelFile());
 		
-		
+		}else {
+			System.err.println("Constraints violated: "+violations.toString());
+		}
 	}
 }
