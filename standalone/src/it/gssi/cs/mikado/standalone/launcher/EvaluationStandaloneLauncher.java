@@ -48,6 +48,7 @@ public class EvaluationStandaloneLauncher {
 			//sc.nextLine()
 		);
 		sourceProperties.setProperty(EmfModel.PROPERTY_READONLOAD, "true");
+		sourceProperties.setProperty(EmfModel.PROPERTY_CACHED, "false");
 		
 		//sc= new Scanner(System.in);
 		//System.out.println("Enter the smart city model relative path");
@@ -67,6 +68,7 @@ public class EvaluationStandaloneLauncher {
 		StringProperties targetProperties = new StringProperties();
 		targetProperties.setProperty(EmfModel.PROPERTY_NAME, "Target");
 		targetProperties.setProperty(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI, kpiMM);
+		
 		targetProperties.setProperty(EmfModel.PROPERTY_MODEL_URI,
 				"model/evaluated.model"
 		);
